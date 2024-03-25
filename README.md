@@ -1,4 +1,3 @@
-# M1_INDIVIDUAL
 # Aplicativo de Compatibilidade de Candidatos
 
 ## Sobre o Projeto
