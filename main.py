@@ -17,5 +17,6 @@ for candidato in candidatos:
     nome, nota_e, nota_t, nota_p, nota_s = candidato
     if nota_e >= nota_minima_e and nota_t >= nota_minima_t and nota_p >= nota_minima_p and nota_s >= nota_minima_s:
         print(candidato)
-    else:
-        print("Nenhum candidato encontrado.")
+        selecionados.append(candidato)
+if len(selecionados) == 0:
+    print("Nenhum candidato atende aos criterios")
