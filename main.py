@@ -1,9 +1,9 @@
 candidatos = [
-    ("Gabriel", 5, 10, 8, 8),
-    ("Vinicius", 10, 7, 7, 8),
-    ("João", 8, 5, 4, 9),
-    ("Lucas", 2, 2, 2, 1),
-    ("Marcos", 10,10,8,9)
+    ("Gabriel", "e5_t10_p8_s8"),
+    ("Vinicius", "e10_t7_p7_s8"),
+    ("João", "e8_t5_p4_s9"),
+    ("Lucas", "e2_t2_p2_s1"),
+    ("Marcos", "e10_t10_p8_s9")
 ]
 
 selecionados = []
@@ -14,9 +14,11 @@ nota_minima_p = int(input("Digite a nota minima em Teste Prático:"))
 nota_minima_s = int(input("Digite a nota minima em Avaliação Soft Skills:"))
 
 for candidato in candidatos:
-    nome, nota_e, nota_t, nota_p, nota_s = candidato
+    nome, notas = candidato
+    nota_e, nota_t, nota_p, nota_s = [int(nota[1:]) for nota in notas.split('_')]
+    
     if nota_e >= nota_minima_e and nota_t >= nota_minima_t and nota_p >= nota_minima_p and nota_s >= nota_minima_s:
-        print(candidato)
+        print(f"Nome: {nome} Notas: {nota_e}, {nota_t}, {nota_p}, {nota_s}")
         selecionados.append(candidato)
 if len(selecionados) == 0:
     print("Nenhum candidato atende aos criterios")
